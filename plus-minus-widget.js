@@ -1,21 +1,42 @@
-const addBtn  = document.querySelector(".plus")
-const minusBtn  = document.querySelector(".minus")
+const addBtn  = document.querySelector(".plus");
+const minusBtn  = document.querySelector(".minus");
+const  totalValue = document.querySelector(".total-value");
+const refreshBtn = document.querySelector(".refresh")
+
+var total = 0;
+
 
 function addBtnClicked() {
-    var total = 0;
-    var buttonSelected = 0;
-     if (buttonSelected === addBtn){
-        total += 1
- }
-   // alert('hi')
+     
+       
+    totalValue.innerHTML = ++total 
 }
+ 
 
 addBtn.addEventListener("click", addBtnClicked)
+ 
+
+  
 
 
 
 
-function minusBtnClicked(){
+ function minusBtnClicked(){
+    if(total > 0){
+    
+     totalValue.innerHTML = --total
+    }
 
-}
-minusBtn.addEventListener("click", )
+  }
+
+
+ minusBtn.addEventListener("click", minusBtnClicked)
+
+
+ 
+   
+
+ refreshBtn.addEventListener("click", function refreshBtnClicked(){
+    totalValue.innerHTML = 0;
+    location.reload() 
+ });
